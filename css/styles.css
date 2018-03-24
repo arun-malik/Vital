@@ -88,7 +88,6 @@ header {
   background-color: #993300;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19);
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   overflow: hidden;
   z-index: 1;
@@ -109,13 +108,10 @@ header {
   height: 48px;
   margin: 4px;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -ms-flex-align: center;
-  -webkit-box-align: center;
           align-items: center;
   -ms-flex-pack: center;
-  -webkit-box-pack: center;
           justify-content: center;
   cursor: pointer;
 }
@@ -143,18 +139,14 @@ header {
   bottom: 0;
   box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.4);
   z-index: 1;
-  transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.30, 1);
   transition: transform 0.3s cubic-bezier(0, 0, 0.30, 1);
-  transition: transform 0.3s cubic-bezier(0, 0, 0.30, 1), -webkit-transform 0.3s cubic-bezier(0, 0, 0.30, 1);
-  -webkit-transform: translateX(-110%);
-          transform: translateX(-110%);
+  transform: translateX(-110%);
   will-change: transform;
   z-index: 2;
 }
 
 .menu--show {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 
 .menu__overlay {
@@ -228,8 +220,7 @@ header {
   font-size: 15px;
   font-weight: 400;
   opacity: 0;
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px);
+  transform: translateY(20px);
   will-change: transform;
   position: fixed;
   bottom: 20px;
@@ -238,8 +229,7 @@ header {
 
 .toast__msg--show {
   opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
 
 button {
@@ -301,11 +291,8 @@ button:disabled {
 .card__container {
   margin-top: 30px;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
           flex-direction: column;
 }
 
@@ -368,11 +355,8 @@ b {
 .card__followers,
 .card__following {
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
           flex-direction: row;
   margin-bottom: 5px;
 }
@@ -389,13 +373,10 @@ b {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
   color: #fff;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -ms-flex-pack: center;
-      -webkit-box-pack: center;
           justify-content: center;
   -ms-flex-align: center;
-      -webkit-box-align: center;
           align-items: center;
   cursor: pointer;
   position: fixed;
@@ -418,15 +399,11 @@ b {
   bottom: -12px;
   width: 56px;
   height: 56px;
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
+  transform: scale(0.5);
   background: #fff;
   border-radius: 50%;
-  -webkit-transform-origin: 50%;
-          transform-origin: 50%;
-  transition: -webkit-transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
+  transform-origin: 50%;
   transition: transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
-  transition: transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms, -webkit-transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   will-change: transform;
@@ -440,8 +417,7 @@ b {
 
 .fab:active .fab__ripple {
   opacity: 0.2;
-  -webkit-transform: scale(1) translate(31%, -22%);
-          transform: scale(1) translate(31%, -22%);
+  transform: scale(1) translate(31%, -22%);
 }
 
 .fab__image {
@@ -492,11 +468,8 @@ b {
 
 .add__to-card {
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
           flex-direction: row;
   margin-bottom: 20px;
 }
