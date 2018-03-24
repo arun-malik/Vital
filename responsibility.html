@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Help Is Here</title>
+    <title>Vital</title>
     <meta http-equiv=X-UA-Compatible content="IE=edge">
-    <meta name=description content="This is a public safety application which makes contacting emergency services easier. This will help people in case of emergency and will avoid flooding 911 numbers">
+    <meta name=description content="Vital app is for firefighters to coordinate better during an emergency condition.">
     <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- <meta name="theme-color" content="#0288d1"> -->
     <!-- <meta name="msapplication-TileColor" content="#0288d1"> -->
@@ -12,8 +12,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Help Is Here">
-    <meta name="application-name" content="Help Is Here">
+    <meta name="apple-mobile-web-app-title" content="Vital">
+    <meta name="application-name" content="Vital">
     <link rel="apple-touch-icon" href="./images/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="./images/icons/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="./images/icons/favicon-16x16.png" sizes="16x16">
@@ -21,9 +21,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
 
   </head>
-  <body onload="onLoad()">
+  <body>
     <div class="app-layout" id="step1">
       <header>
         <span class="header__icon">
@@ -32,7 +34,7 @@
           </svg>
         </span>
 
-        <span class="header__title no--select" style="align:center">FireFighter</span>
+        <span class="header__title no--select" style="align:center">Firefighter Responsibilities</span>
       </header>
       
       <div class="menu">
@@ -41,28 +43,20 @@
         <li>
           <a rel="noopener" href="/">FireFighter</a>
         </li>
+        <hr/>
         <li>
           <a rel="noopener" href="/admin">Commander</a>
+        </li>
+        <hr/>
+        <li>
+          <a rel="noopener" href="/otherstatus">&nbsp;&nbsp;Others status</a>
         </li>
       </ul>
     </div>
     <div class="menu__overlay"></div>
+    <iframe class="mapView" src="https://msit.powerbi.com/view?r=eyJrIjoiYTI4NDAzMjMtODZiYy00MGEyLThjNjQtMzc4NmJiYzRjNjVhIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="0" allowFullScreen="true"></iframe>
 
-      <button class="btn btn-danger btn-block btn-lg main_buttons" style="margin-top:100px;">Life Threatening</button>
-      <br/><br/>
-      <button class="btn btn-default btn-block btn-lg main_buttons">Other</button>
-
-    <div class="fab fab__push">
-      <div class="fab__ripple"></div>
-      <img class="fab__image" src="./images/push-off.png" alt="Push Notification" />
-    </div>
-
-    <!-- Toast msg -->
-    <div class="toast__msg"></div>
   </div>
-
-  
-
 
   <!-- JS Files  -->
   <script src="./js/toast.js"></script>
@@ -73,6 +67,7 @@
   <script src="./js/sync.js"></script>
   <script src="./js/share.js"></script>
   <script src="./js/menu.js"></script>
-  <script src="./js/countdown.js"></script>
+
+
   </body>
 </html>

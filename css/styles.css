@@ -562,16 +562,30 @@ b i a {
 
 
 .main_buttons{
-  height:30%;
+  height:15%;
   width:95%;
   margin-right:10px;
   margin-left:10px;
 }
 
 .component{
+  width:95%;
   position:relative;
   margin-right:10px;
   margin-left:10px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.mapView{
+  margin-top: 50px;
+  display: block;
+  width: 100vh;
+  height: 100vw;
+  transform: translateY(100vh) rotate(-90deg);
+  transform-origin: top left;
+}
+
+
+
+

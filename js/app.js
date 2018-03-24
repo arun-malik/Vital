@@ -76,6 +76,11 @@ function startButton(){
   name = document.getElementById("name").value;
   teamName = document.getElementById("teamName").value;
   customTaskDescription = document.getElementById("customTaskDescription").value;
+  localStorage.setItem('name', name);
+  localStorage.setItem('teamName',teamName);
+  localStorage.setItem('customTaskDescription',customTaskDescription);
+
+
 
   // var postData = JSON.stringify({ 
   //   "id": name, 
@@ -108,34 +113,21 @@ function showPosition(position) {
     // var x = document.getElementById("locationLbl");
   console.log("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude); 
   var postData = JSON.stringify({ 
-      "id": name, 
-      "Team Name": teamName, 
-      "Task" : customTaskDescription,
-      "Lat": position.coords.latitude, 
-      "Lon": position.coords.longitude
+      "id": localStorage.getItem('name'), 
+      "Team Name": localStorage.getItem('teamName'), 
+      "Task" : localStorage.getItem('customTaskDescription'),
+      "Lat": position.coords.latitude , 
+      "Lon":  position.coords.longitude
     });
   sendData(postData);
 }
 
 
-
-function nudgeButton(){
-  // alert("nudge");
-  // var id = navigator.geolocation.getCurrentPosition(function(pos){
-  //   console.log(pos.coords.latitude);
-  //   console.log(pos.coords.longitude);
-  //   document.getElementById("locationLbl").innerHTML = pos.coords
-  // });
-
-
-  navigator.geolocation.getCurrentPosition(getCoor, errorCoor, {maximumAge:60000, timeout:5000, enableHighAccuracy:true});
-}
-
-function getCoor(pos){
-    console.log(pos.coords.latitude);
-    console.log(pos.coords.longitude);
-    document.getElementById("locationLbl").innerHTML = pos.coords.latitude
-  }
+// function getCoor(pos){
+//     console.log(pos.coords.latitude);
+//     console.log(pos.coords.longitude);
+//     document.getElementById("locationLbl").innerHTML = pos.coords.latitude
+//   }
 
 
 function errorCoor(){
@@ -143,6 +135,25 @@ function errorCoor(){
 }
 
 
+function onLoad(){
 
+  var fireFighterName = localStorage.getItem('name');
+  var team = localStorage.getItem('teamName');
+  var task = localStorage.getItem('customTaskDescription');
+
+  if(fireFighterName){
+      document.getElementById("name").value = fireFighterName;
+  }
+
+  if(team){
+    document.getElementById("teamName").value = team;
+  }
+
+  if(task){
+    document.getElementById("customTaskDescription").value = task;
+  }
+
+
+}
 
 

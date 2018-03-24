@@ -25,7 +25,7 @@
     <script src="./js/jquery.min.js"></script>
 
   </head>
-  <body>
+  <body onload="onLoad()">
     <div class="app-layout" id="step1">
       <header>
         <span class="header__icon">
@@ -43,15 +43,13 @@
         <li>
           <a rel="noopener" href="/">FireFighter</a>
         </li>
-        <li>
-          <a rel="noopener" href="/mystatus">&nbsp;&nbsp;My Status</a>
-        </li>
-        <li>
-          <a rel="noopener" href="/">&nbsp;&nbsp;Others status</a>
-        </li>
         <hr/>
         <li>
           <a rel="noopener" href="/admin">Commander</a>
+        </li>
+        <hr/>
+        <li>
+          <a rel="noopener" href="/otherstatus">&nbsp;&nbsp;Others status</a>
         </li>
       </ul>
     </div>
@@ -79,8 +77,7 @@
       <br/><br/>
       <button class="btn btn-default btn-block btn-lg main_buttons" onclick="stopButton()" id="stopBtn">Stop</button>
       <br/>
-      <label id="locationLbl" > Location </label>
-      <button id="nudge" onclick="nudgeButton()"> Nudge</button>
+
 
   </div>
 

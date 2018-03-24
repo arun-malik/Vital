@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Vital</title>
     <meta http-equiv=X-UA-Compatible content="IE=edge">
-    <meta name=description content="This is a public safety application which makes contacting emergency services easier. This will help people in case of emergency and will avoid flooding 911 numbers">
+    <meta name=description content="Vital app is for firefighters to coordinate better during an emergency condition.">
     <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- <meta name="theme-color" content="#0288d1"> -->
     <!-- <meta name="msapplication-TileColor" content="#0288d1"> -->
@@ -21,9 +21,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
 
   </head>
-  <body onload="onLoad()">
+  <body>
     <div class="app-layout" id="step1">
       <header>
         <span class="header__icon">
@@ -32,7 +34,7 @@
           </svg>
         </span>
 
-        <span class="header__title no--select">Commander</span>
+        <span class="header__title no--select" style="align:center">Commander</span>
       </header>
       
       <div class="menu">
@@ -41,30 +43,20 @@
         <li>
           <a rel="noopener" href="/">FireFighter</a>
         </li>
-        <li>
-          <a rel="noopener" href="/mystatus">&nbsp;&nbsp;My Status</a>
-        </li>
-        <li>
-          <a rel="noopener" href="/">&nbsp;&nbsp;Others status</a>
-        </li>
         <hr/>
         <li>
           <a rel="noopener" href="/admin">Commander</a>
         </li>
+        <hr/>
+        <li>
+          <a rel="noopener" href="/otherstatus">&nbsp;&nbsp;Others status</a>
+        </li>
       </ul>
     </div>
     <div class="menu__overlay"></div>
+    <iframe class="mapView" src="https://msit.powerbi.com/view?r=eyJrIjoiMmY0NDBlYzMtMDNlNC00ODUwLWI0NTMtYWE0ZWFmYjE5ZDdmIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="0" allowFullScreen="true"></iframe>
 
-
-      <iframe width="100%" height="100%" src="https://msit.powerbi.com/view?r=eyJrIjoiYmVjMTI4OGUtNDdjYy00NjEwLWIxODktM2M4NDgwZWQ1Nzg3IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="0" allowFullScreen="true"></iframe>
-
-
-    <!-- Toast msg -->
-    <div class="toast__msg"></div>
   </div>
-
-  
-
 
   <!-- JS Files  -->
   <script src="./js/toast.js"></script>
@@ -75,6 +67,7 @@
   <script src="./js/sync.js"></script>
   <script src="./js/share.js"></script>
   <script src="./js/menu.js"></script>
-  <script src="./js/countdown.js"></script>
+
+
   </body>
 </html>
