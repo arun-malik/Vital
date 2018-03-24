@@ -1,0 +1,24 @@
+{
+  "name": "help-is-here",
+  "description": "Application for public safety",
+  "version": "1.0.0",
+  "author": "amolpujari",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "node-gcm": "^0.14.0"
+  },
+  "scripts": {
+    "start": "npm run css && node server.js",
+    "css": "postcss -u autoprefixer -r css/*",
+    "postinstall": "npm run start"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "postcss-cli": "^2.6.0"
+  },
+  "engines": {
+    "node": "4.1.1"
+  },
+  "license": "MIT"
+}

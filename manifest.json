@@ -1,0 +1,25 @@
+{
+  "name": "Vital",
+  "short_name": "Vital",
+  "description": "Vital app for firefighters to coordinate better",
+  "start_url": "./index.html?utm=homescreen",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#993300",
+  "theme_color": "#993300",
+  "icons": [{
+      "src": "./images/icons/fire-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "./images/icons/firefighter.png",
+      "type": "image/png",
+      "sizes": "512x512"
+  }],
+  "author": {
+    "name": "Amol Pujari and Arun Malik"    
+  },
+  "gcm_sender_id": "847244712742",
+  "gcm_user_visible_only": true
+}
