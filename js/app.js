@@ -64,9 +64,24 @@
 
 var sendLocationFlag = false;
 var geoLocationId = null;
+var name = "";
+var teamName = "";
+var customTaskDescription = "";
+
+function sendData(postData){
+  $.post( "https://prod-54.westus.logic.azure.com/workflows/04c3a6f695334d52bf357329e0563cf8/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YEvjDTPZbPVAexcRWIuhfX8mIIQpd-0nnhHZFWDhIDs", postData );
+}
 
 function startButton(){
-  alert("kajsdhfs");
+  name = document.getElementById("name").value;
+  teamName = document.getElementById("teamName").value;
+  customTaskDescription = document.getElementById("customTaskDescription").value;
+
+  // var postData = JSON.stringify({ 
+  //   "id": name, 
+  //   "team_name": teamName, 
+  //   "custom_task_description" : customTaskDescription
+  // });
   sendLocationFlag = true;
   sendLocation();  
 }
@@ -76,11 +91,11 @@ function stopButton(){
 }
 
 function sendLocation(){
+
   if(sendLocationFlag == true){
-    var x = document.getElementById("locationLbl");
 
     if (navigator.geolocation){
-        geoLocationId = navigator.geolocation.watchPosition(success, error, options);
+        navigator.geolocation.getCurrentPosition(showPosition, errorCoor, {maximumAge:60000, timeout:5000, enableHighAccuracy:true});
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
@@ -89,10 +104,17 @@ function sendLocation(){
 }
 
 function showPosition(position) {
-  alert("showPosition = " + position.coords.latitude);
-    var x = document.getElementById("locationLbl");
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude; 
+  // alert("showPosition = " + position.coords.latitude);
+    // var x = document.getElementById("locationLbl");
+  console.log("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude); 
+  var postData = JSON.stringify({ 
+      "id": name, 
+      "Team Name": teamName, 
+      "Task" : customTaskDescription,
+      "Lat": position.coords.latitude, 
+      "Lon": position.coords.longitude
+    });
+  sendData(postData);
 }
 
 
@@ -119,8 +141,6 @@ function getCoor(pos){
 function errorCoor(){
   
 }
-
-
 
 
 

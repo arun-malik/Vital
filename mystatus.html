@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Vital</title>
     <meta http-equiv=X-UA-Compatible content="IE=edge">
-    <meta name=description content="This is a public safety application which makes contacting emergency services easier. This will help people in case of emergency and will avoid flooding 911 numbers">
+    <meta name=description content="Vital app is for firefighters to coordinate better during an emergency condition.">
     <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- <meta name="theme-color" content="#0288d1"> -->
     <!-- <meta name="msapplication-TileColor" content="#0288d1"> -->
@@ -22,8 +22,10 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/styles.css">
 
+<!-- AIzaSyAXcPkaWfZpEwrpB0JKgQfDRka7xj3Sv2k -->
+
   </head>
-  <body onload="onLoad()">
+  <body>
     <div class="app-layout" id="step1">
       <header>
         <span class="header__icon">
@@ -32,7 +34,7 @@
           </svg>
         </span>
 
-        <span class="header__title no--select">Commander</span>
+        <span class="header__title no--select" style="align:center">FireFighter-My Status</span>
       </header>
       
       <div class="menu">
@@ -42,7 +44,7 @@
           <a rel="noopener" href="/">FireFighter</a>
         </li>
         <li>
-          <a rel="noopener" href="/mystatus">&nbsp;&nbsp;My Status</a>
+          <a rel="noopener" href="/mystatus" onclick="myStatus()" class="active">&nbsp;&nbsp;My Status</a>
         </li>
         <li>
           <a rel="noopener" href="/">&nbsp;&nbsp;Others status</a>
@@ -55,16 +57,14 @@
     </div>
     <div class="menu__overlay"></div>
 
+      <button class="btn btn-danger btn-block btn-lg main_buttons" style="margin-top:100px;" onclick="startButton()">Start</button>
+      <br/><br/>
+      <button class="btn btn-default btn-block btn-lg main_buttons" onclick="stopButton()">Stop</button>
+      <br/>
+      <label id="locationLbl" > Location </label>
+      <button id="nudge" onclick="nudgeButton()"> Nudge</button>
 
-      <iframe width="100%" height="100%" src="https://msit.powerbi.com/view?r=eyJrIjoiYmVjMTI4OGUtNDdjYy00NjEwLWIxODktM2M4NDgwZWQ1Nzg3IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="0" allowFullScreen="true"></iframe>
-
-
-    <!-- Toast msg -->
-    <div class="toast__msg"></div>
   </div>
-
-  
-
 
   <!-- JS Files  -->
   <script src="./js/toast.js"></script>
@@ -75,6 +75,5 @@
   <script src="./js/sync.js"></script>
   <script src="./js/share.js"></script>
   <script src="./js/menu.js"></script>
-  <script src="./js/countdown.js"></script>
   </body>
 </html>

@@ -27,6 +27,10 @@ app.get('/admin', function (req, res) {
   res.sendFile(__dirname + '/admin.html');
 });
 
+app.get('/mystatus', function (req, res) {
+  res.sendFile(__dirname + '/mystatus.html');
+});
+
 //To receive push request from client
 app.post('/send_notification', function (req, res) {
   if (!req.body) {

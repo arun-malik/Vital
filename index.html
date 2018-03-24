@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/styles.css">
-
-<!-- AIzaSyAXcPkaWfZpEwrpB0JKgQfDRka7xj3Sv2k -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
 
   </head>
   <body>
@@ -44,7 +44,7 @@
           <a rel="noopener" href="/">FireFighter</a>
         </li>
         <li>
-          <a rel="noopener" href="/">&nbsp;&nbsp;My Status</a>
+          <a rel="noopener" href="/mystatus">&nbsp;&nbsp;My Status</a>
         </li>
         <li>
           <a rel="noopener" href="/">&nbsp;&nbsp;Others status</a>
@@ -56,16 +56,33 @@
       </ul>
     </div>
     <div class="menu__overlay"></div>
+      <div style="margin-top:100px;"></div>
+    
+      <div class="form-group ">
+        <input type="text" class="form-control component" id="name" placeholder="Name"/> 
+        <input type="text" class="form-control component" id="teamName" placeholder="Team Name"/> 
+        <input type="text" class="form-control component" id="customTaskDescription" placeholder="Custom task descriptions"/> 
+     <!--    <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Task Selection
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+          </ul>
+        </div> -->
 
-      <button class="btn btn-danger btn-block btn-lg main_buttons" style="margin-top:100px;" onclick="startButton()">Start</button>
+
+
+      </div>
+      <button class="btn btn-danger btn-block btn-lg main_buttons" onclick="startButton()" id="startBtn">Start</button>
       <br/><br/>
-      <button class="btn btn-default btn-block btn-lg main_buttons" onclick="stopButton()">Stop</button>
+      <button class="btn btn-default btn-block btn-lg main_buttons" onclick="stopButton()" id="stopBtn">Stop</button>
       <br/>
       <label id="locationLbl" > Location </label>
       <button id="nudge" onclick="nudgeButton()"> Nudge</button>
 
   </div>
-
 
   <!-- JS Files  -->
   <script src="./js/toast.js"></script>
@@ -76,5 +93,7 @@
   <script src="./js/sync.js"></script>
   <script src="./js/share.js"></script>
   <script src="./js/menu.js"></script>
+
+
   </body>
 </html>
